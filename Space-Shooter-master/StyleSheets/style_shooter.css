@@ -1,0 +1,70 @@
+#mycanvas{
+                        border: 5px solid red;
+                        background : url("../Images/bg2.png");
+                        -webkit-animation: animatedBackground 20s linear infinite;
+                        animation: animatedBackground 20s linear infinite;
+                        background-repeat: repeat-y;
+                }
+
+                @-webkit-keyframes animatedBackground {
+                        from { background-position: 0 0; }
+                        to { background-position: 0 2000px; }
+                }
+                @keyframes animatedBackground {
+                        from { background-position: 0 0; }
+                        to { background-position: 0 2000px; }
+                }
+
+html {
+  background-color: black; 
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden; /* prevent page scroll on mobile */
+  touch-action: none; /* prevent default gestures */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px dashed #ccc;
+  background: #000;
+  max-width: 100vw; /* fit viewport width */
+  height: auto; /* preserve aspect ratio */
+}
+
+/* Mobile Controls */
+#controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  z-index: 10;
+}
+.ctrl-btn {
+  flex: 1 1 50%;
+  height: 56px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #ff4655;
+  border-radius: 12px;
+  outline: none;
+  touch-action: manipulation; /* hint for mobile tap responsiveness */
+}
+.ctrl-btn:active {
+  transform: scale(0.98);
+  background: rgba(255,255,255,0.2);
+}
